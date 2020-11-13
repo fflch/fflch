@@ -7,9 +7,6 @@ core: 8.x
 libraries:
   - fflch/global-styles-and-scripts
 
-libraries-override:
-  core/jquery: fflch/jquery-custom
-
 # Regions
 regions:
   header: Header
@@ -27,5 +24,3 @@ regions:
   footer_third: Footer Third
   footer_fourth: Footer Fourth
   footer: Footer
-
-base theme: aegan
