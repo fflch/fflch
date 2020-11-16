@@ -4,6 +4,7 @@ global-styles-and-scripts:
     theme:
       includes/bootstrap.min.css: {}
       includes/font-awesome.min.css: {}
+      css/tabs.css: {}
       includes/aegan.css: {}
       css/global.css: {}
       #css/menu.css: {}
