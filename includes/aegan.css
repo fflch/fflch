@@ -617,17 +617,7 @@ select, textarea {
 .region-header-right .search-block-form .form-item .form-search {
   width: 200px;
 }
-.search-block-form .form-submit {
-  width: 25px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  border: none;
-  height: 100%;
-  background-image: url('../images/search.png');
-  font-size: 0;
-  border-radius: 0px;
-}
+
 
 
 @media(min-width: 0px) and (max-width: 767px) {
