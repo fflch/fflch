@@ -210,40 +210,6 @@ img {
   background-color: #fff;
 }
 
-/* Slider */
-.flexslider {
-  margin: 0px;
-  border-radius: 0px;
-  border: none;
-  background-color: transparent;
-}
-.flex-direction-nav a {
-  width: 30px;
-  height: 45px;
-}
-.flex-direction-nav a:before {
-  font-size: 30px;
-  padding: 5px;
-  padding-top: 7px;
-  padding-bottom: 5px;
-}
-.flex-control-nav {
-  bottom: 0px;
-  display: none;
-}
-.flexslider .slides > li {
-  position: relative;
-}
-.flex-caption {
-  margin: 0px;
-  background-color: rgba(0,0,0,0.7);
-  color: #fff;
-  position: absolute;
-  width: 100%;
-  bottom: 0px;
-  padding: 2%;
-  line-height: 18px;
-}
 /* Dark blue BG */
 .dark-blue-bg .block-title {
   font-weight: bold;
