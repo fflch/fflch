@@ -79,14 +79,14 @@
     the server which comments are new for the user. Rendering the final
     "new" indicator here would break the render cache.
     #}
-    <span class="hidden new" data-comment-timestamp="{{ new_indicator_timestamp }}"></span>
+    <span class="d-none new" data-comment-timestamp="{{ new_indicator_timestamp }}"></span>
     {#
       Indicate the semantic relationship between parent and child comments
       for accessibility. The list is difficult to navigate in a screen
       reader without this information.
     #}
     {% if parent %}
-      <p class="parent visually-hidden">{{ parent }}</p>
+      <p class="parent d-none">{{ parent }}</p>
     {% endif %}
 
   </footer>
