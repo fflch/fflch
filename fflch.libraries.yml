@@ -12,6 +12,7 @@ global-styles-and-scripts:
   js:
     includes/bootstrap.min.js: {}
     includes/font-awesome.min.js: {}
+    includes/jquery.smooth-scroll.js: {} 
     js/global.js: {}
 
   dependencies:
