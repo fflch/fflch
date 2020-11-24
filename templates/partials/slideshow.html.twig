@@ -1,0 +1,38 @@
+<div id="carouselBootstrapIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+
+    {% set i = 1 %}
+    {% for slide in slider %}
+      <li data-target="#carouselBootstrapIndicators" data-slide-to="{{ i }}" 
+        class="{% if i == 1 %} active {% endif %}">
+      </li>
+      {% set i = i + 1 %}
+    {% endfor %}
+  </ol>
+
+  <div class="carousel-inner">
+    {% set i = 1 %}
+    {% for slide in slider %}
+           <div class="carousel-item {% if i == 1 %} active {% endif %}">
+            <a href="{{ slide.url | t }}" target="_blank">
+              <img class="d-block w-100" src="{{ slide.src }}" alt="{{ slide.name }}">
+              {% if slide.description %}
+                <div class="carousel-caption d-none d-md-block">
+                  <p>{{ slide.description | raw | t }}</p>
+                </div>
+              {% endif %}
+            </a>
+          </div>
+      {% set i = i + 1 %}
+    {% endfor %}
+  </div>
+
+  <a class="carousel-control-prev" href="#carouselBootstrapIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselBootstrapIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

@@ -1,5 +1,3 @@
-# fflch-theme
-fflch drupal theme
+# drupal theme for FFLCH USP
 
-
-web/themes/contrib/fflch/fflch-theme
+It was built on top of https://www.drupal.org/project/aegan + bootstrap 4

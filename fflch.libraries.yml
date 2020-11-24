@@ -7,8 +7,7 @@ global-styles-and-scripts:
       css/tabs.css: {}
       includes/aegan.css: {}
       css/global.css: {}
-      #css/menu.css: {}
-      #css/slideshow.css: {}
+      css/slideshow.css: {}
   js:
     includes/bootstrap.min.js: {}
     includes/font-awesome.min.js: {}
