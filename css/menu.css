@@ -1,0 +1,34 @@
+/* menu principal azul ***/
+/*.nav .open>a, .nav .open>a:hover, .nav .open>a:focus, .nav>li.active>a, .nav>li.active>a:hover, .nav>li.active>a:focus, .nav>li>a.is-active, .nav>li>a:hover, .nav>li>a:focus {
+    background-color: #273e74;
+    color: #fff;
+}*/
+
+/* remove tracinho separador nos itens de menu */
+/*.navbar-nav>li {
+    border-right: 0;
+}*/
+
+/* menu principal dropdown ***/
+/*.dropdown-menu>li>a {
+    border-bottom: 1px dotted #003954;
+    color: #fff;
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    background-color:  #273e74;
+}
+
+.navbar-nav .dropdown-menu {
+    background-color: #273e74;
+    color: #fff;
+}
+
+.navbar-nav .dropdown-menu {
+    background-color: #273e74;
+    color: #fff;
+}
+
+.dropdown:hover > a {
+    background-color: #273e74;
+}*/
