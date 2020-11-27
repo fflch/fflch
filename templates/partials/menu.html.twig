@@ -1,0 +1,46 @@
+
+<nav class="navbar navbar-expand-lg" style="background-color: #273e74; color: #fff;">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    {% import _self as menus %}
+    {#
+      We call a macro which calls itself to render the full tree.
+      @see https://twig.sensiolabs.org/doc/tags/macro.html
+    #}
+    {{ menus.menu_links(items, attributes, 0) }}
+    {% macro menu_links(items, attributes, menu_level) %}
+      {% import _self as menus %}
+      {% if items %}
+        {% if menu_level == 0 %}
+          <ul class="navbar-nav mr-auto">
+        {% endif %}
+        {% for item in items %}
+          {% if item.below %}
+            {% if menu_level == 0 %}
+              <li class="nav-item dropdown">
+                <a href="{{ item.url }}" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ item.title }}</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                </div>
+              </li>
+            {% else %}
+              <li class="nav-item dropdown">
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                </div>
+              </li>
+            {% endif %}
+          {% elseif menu_level == 1 %}
+            {{ link(item.title, item.url, item.attributes.removeClass('nav-item').addClass('dropdown-item')) }}
+          {% else %}
+            <li {{ item.attributes.addClass('nav-item') }}>{{ link(item.title, item.url, item.attributes.removeClass('nav-item').addClass('nav-link')) }}</li>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endmacro %}
+    </ul>
+  </div>
+</nav>
