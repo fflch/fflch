@@ -5,42 +5,98 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    {% import _self as menus %}
-    {#
-      We call a macro which calls itself to render the full tree.
-      @see https://twig.sensiolabs.org/doc/tags/macro.html
-    #}
-    {{ menus.menu_links(items, attributes, 0) }}
-    {% macro menu_links(items, attributes, menu_level) %}
+    <ul class="navbar-nav mr-auto">
       {% import _self as menus %}
-      {% if items %}
-        {% if menu_level == 0 %}
-          <ul class="navbar-nav mr-auto">
-        {% endif %}
-        {% for item in items %}
-          {% if item.below %}
-            {% if menu_level == 0 %}
-              <li class="nav-item dropdown">
-                <a href="{{ item.url }}" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ item.title }}</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-                </div>
-              </li>
+      {#
+        We call a macro which calls itself to render the full tree.
+        @see https://twig.sensiolabs.org/doc/tags/macro.html
+      #}
+      {{ menus.menu_links(items, attributes, 0, menu_name) }} {# 1. #}
+      {% macro menu_links(items, attributes, menu_level, menu_name) %} {# 1. #}
+        {% import _self as menus %}  
+        {% if items %}
+          {# 1. #}
+          {%
+            set menu_classes = [
+              'nav-item',
+            ]
+          %}
+          {# 1. #}
+          {%
+            set submenu_classes = [
+              'nav-item dropdown',
+            ]
+          %}
+          {# 1. #}
+          {%
+            set item_classes = [
+              'nav-item',
+            ]
+          %}
+          {# 1. #}
+          {%
+            set link_classes = [
+              'nav-link',
+            ]
+          %}
+          {%
+            set item_classes_drop = [
+              'nav-link dropdown-toggle',
+            ]
+          %}
+          {# 1. #}
+          {%
+            set link_classes_drop = [
+              'dropdown-item',
+            ]
+          %}
+          {% for item in items %}
+            {% if item.menu_level == 0 %}
+              {% if item.below %}
+              <li{{ attributes.removeClass(menu_classes).addClass(submenu_classes) }}> {# 1. #}
+                {{
+                  link(
+                    item.title,
+                    item.url,
+                    item.attributes.addClass(item_classes_drop)
+                  )
+                }}
+                {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_name) }} {# 1. #}
+              {% else %}
+                {{
+                  link(
+                    item.title,
+                    item.url,
+                    item.attributes.removeClass(item_classes_drop).addClass(link_classes_drop)
+                  )
+                }}
+              {% endif %}
             {% else %}
-              <li class="nav-item dropdown">
+              {% if item.below %}
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-                </div>
-              </li>
+                {{
+                  link(
+                    item.title,
+                    item.url,
+                    item.attributes.addClass(link_classes_drop)
+                  )
+                }}
+                {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_name) }} {# 1. #}
+              {% else %}
+                {{
+                  link(
+                    item.title,
+                    item.url,
+                    item.attributes.removeClass(item_classes_drop).addClass(link_classes_drop)
+                  )
+                }}
+              {% endif %}
+              </div>
             {% endif %}
-          {% elseif menu_level == 1 %}
-            {{ link(item.title, item.url, item.attributes.removeClass('nav-item').addClass('dropdown-item')) }}
-          {% else %}
-            <li {{ item.attributes.addClass('nav-item') }}>{{ link(item.title, item.url, item.attributes.removeClass('nav-item').addClass('nav-link')) }}</li>
-          {% endif %}
-        {% endfor %}
-      {% endif %}
-    {% endmacro %}
+            </li>
+          {% endfor %}
+        {% endif %}
+      {% endmacro %}
     </ul>
   </div>
 </nav>
