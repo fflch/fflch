@@ -14,6 +14,7 @@ global-styles-and-scripts:
     includes/font-awesome.min.js: {}
     includes/jquery.smooth-scroll.js: {} 
     js/global.js: {}
+    js/menu.js: {}
 
   dependencies:
     - core/jquery
