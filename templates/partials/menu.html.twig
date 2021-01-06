@@ -5,42 +5,100 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    {% import _self as menus %}
-    {#
-      We call a macro which calls itself to render the full tree.
-      @see https://twig.sensiolabs.org/doc/tags/macro.html
-    #}
-    {{ menus.menu_links(items, attributes, 0) }}
-    {% macro menu_links(items, attributes, menu_level) %}
+    <ul class="navbar-nav mr-auto">
+      {#
+      /**
+      * @file
+      * Theme override to display a menu.
+      */
+      #}
       {% import _self as menus %}
-      {% if items %}
-        {% if menu_level == 0 %}
-          <ul class="navbar-nav mr-auto">
-        {% endif %}
-        {% for item in items %}
-          {% if item.below %}
-            {% if menu_level == 0 %}
-              <li class="nav-item dropdown">
-                <a href="{{ item.url }}" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ item.title }}</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-                </div>
-              </li>
+
+      {#
+        We call a macro which calls itself to render the full tree.
+        @see https://twig.symfony.com/doc/1.x/tags/macro.html
+        1. We use menu_name (see above) to create a CSS class name from it.
+        See https://www.drupal.org/node/2649076
+      #}
+      {{ menus.menu_links(items, attributes, 0, menu_name) }} {# 1. #}
+
+      {% macro menu_links(items, attributes, menu_level, menu_name) %} {# 1. #}
+        {% import _self as menus %}
+        {%
+          set li_classes = [
+            'nav-item',
+          ]
+        %}
+        {%
+          set li_dropdown_classes = [
+            'dropdown',
+          ]
+        %}
+        {%
+          set link_classes = [
+            'nav-link',
+          ]
+        %}
+        {%
+          set link_dropdown_classes = [
+            'nav-link dropdown-toggle',
+          ]
+        %}
+        {%
+          set ul_dropdown_menu_classes = [
+            'dropdown-menu',
+          ]
+        %}
+        {%
+          set li_dropdown_item_classes = [
+            'dropdown-item',
+          ]
+        %}
+        {% if items %}
+          {% for item in items %}
+            {% if item.below %}
+              {% if menu_level == 0 %}
+                <li{{ attributes.removeClass(link_dropdown_classes).removeClass(li_dropdown_item_classes).removeClass(ul_dropdown_menu_classes).addClass(li_dropdown_classes) }}> {# 1. #}
+                {{
+                  link(
+                    item.title,
+                    item.url,
+                    item.attributes.removeClass(li_dropdown_classes).removeClass(li_dropdown_item_classes).removeClass(ul_dropdown_menu_classes).addClass(link_dropdown_classes)
+                  )
+                }}
+                {% if item.below %}
+                  <ul {{ attributes.removeClass(link_dropdown_classes).removeClass(li_dropdown_classes).removeClass(li_dropdown_item_classes).removeClass(li_dropdown_classes).addClass(ul_dropdown_menu_classes) }}>
+                  {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_name) }} {# 1. #}
+                {% endif %}
+              {% else %}
+                <li{{ attributes.removeClass(link_dropdown_classes).removeClass(li_dropdown_item_classes).removeClass(ul_dropdown_menu_classes).addClass(li_dropdown_item_classes).addClass(li_dropdown_classes) }}> {# 1. #}
+                {{
+                  link(
+                    item.title,
+                    item.url,
+                    item.attributes.removeClass(link_dropdown_classes).removeClass(li_dropdown_classes).removeClass(li_dropdown_item_classes).removeClass(ul_dropdown_menu_classes).addClass(link_dropdown_classes)
+                  )
+                }}
+                {% if item.below %}
+                  <ul {{ attributes.removeClass(link_dropdown_classes).removeClass(li_dropdown_classes).removeClass(li_dropdown_item_classes).removeClass(ul_dropdown_menu_classes).removeClass(li_dropdown_classes).addClass(ul_dropdown_menu_classes) }}>
+                  {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_name) }} {# 1. #}
+                {% endif %}
+              {% endif %}
             {% else %}
-              <li class="nav-item dropdown">
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-                </div>
-              </li>
+              <li{{ attributes.removeClass(link_dropdown_classes).removeClass(li_dropdown_classes).removeClass(li_dropdown_item_classes).removeClass(ul_dropdown_menu_classes).addClass(li_classes) }}> {# 1. #}
+              {{
+                link(
+                  item.title,
+                  item.url,
+                  item.attributes.removeClass(link_dropdown_classes).removeClass(li_dropdown_classes).removeClass(li_dropdown_item_classes).removeClass(ul_dropdown_menu_classes).removeClass(li_classes).addClass(link_classes)
+                )
+              }}
             {% endif %}
-          {% elseif menu_level == 1 %}
-            {{ link(item.title, item.url, item.attributes.removeClass('nav-item').addClass('dropdown-item')) }}
-          {% else %}
-            <li {{ item.attributes.addClass('nav-item') }}>{{ link(item.title, item.url, item.attributes.removeClass('nav-item').addClass('nav-link')) }}</li>
-          {% endif %}
-        {% endfor %}
-      {% endif %}
-    {% endmacro %}
+          {% endfor %}
+          </ul>
+        {% endif %}
+        </li>
+      {% endmacro %}
     </ul>
   </div>
 </nav>
