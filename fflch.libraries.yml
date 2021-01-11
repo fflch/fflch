@@ -9,6 +9,7 @@ global-styles-and-scripts:
       css/global.css: {}
       css/slideshow.css: {}
       css/menu.css: {}
+      css/language-switcher: {}
   js:
     includes/bootstrap.min.js: {}
     includes/font-awesome.min.js: {}

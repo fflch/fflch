@@ -90,7 +90,7 @@
   </div>
 
   <div id="primary-menu-region" class="fflch-primary-menu-region">
-  {% include directory ~ '/templates/partials/header.html.twig' %}
+  {% include '@fflch/partials/header-partial.html.twig' %}
 
 
   {% if page.primary_menu %}
@@ -105,7 +105,7 @@
   {% endif %}
 
   {% if slider %}
-    {% include directory ~ '/templates/partials/slideshow.html.twig' %}
+    {% include '@fflch/partials/slideshow-partial.html.twig' %}
   {% endif %}
 
   {% if page.breadcrumb %}

@@ -1,0 +1,15 @@
+div.language-switcher-language-url ul{
+    float:left;
+    padding-inline-start: 0px;
+    margin-block-end: auto;
+  }
+
+div.language-switcher-language-url ul.links li {
+    display: inline;
+    padding-right: 6px;
+}
+
+.language-icon {
+    height: 14px;
+    width: 18px;
+}
