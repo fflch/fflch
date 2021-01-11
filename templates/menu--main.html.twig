@@ -1,1 +1,58 @@
-{% include directory ~ '/templates/partials/menu.html.twig' %}
+ {# % include directory ~ '/templates/partials/menu.html.twig' % #}
+
+ {#  https://api.drupal.org/api/drupal/core!modules!system!templates!menu.html.twig/8
+    menu_name: The machine name of the menu.
+    items: A nested list of menu items. Each menu item contains:
+      attributes: HTML attributes for the menu item.
+      below: The menu item child items.
+      title: The menu link title.
+      url: The menu link url, instance of \Drupal\Core\Url
+      localized_options: Menu link localized options.
+#}
+
+{# All menu and submenu items #}
+<div class="navbar  navbar-expand-lg navbar-light p-0">
+  <div class="navbar-header">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavigation" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNavigation">
+      {% import _self as menus %}
+      {#
+        We call a macro which calls itself to render the full tree.
+        @see http://twig.sensiolabs.org/doc/tags/macro.html
+      #}
+      {{ menus.menu_links(items, attributes, 0) }}
+
+      {% macro menu_links(items, attributes, menu_level) %}
+        {% import _self as menus %}
+        {% if items %}
+          {% if menu_level == 0 %}
+            <ul class="nav navbar-nav" role="menu" aria-labelledby="dropdownMenu">
+          {% else %}
+            <ul class="dropdown-menu w-100" role="menu" aria-labelledby="dLabel">
+          {% endif %}
+          {% for item in items %}
+            {% if item.below %}
+              {% if menu_level == 0 %}
+                <li class="dropdown main-navigation-dropdown">
+                  <a href="{{ item.url }}" class="dropdown-toggle disabled text-white " data-toggle="dropdown">{{ item.title }} </a><i class="fas fa-caret-right"></i>
+                  {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                </li>
+              {% else %}
+                <li class="dropdown-submenu">
+                  <a class="text-white" href="{{ item.url }}">{{ item.title }} </a><i class="fas fa-caret-right"></i>
+                  {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                </li>
+              {% endif %}
+            {% else %}
+              <li class="text-white" {{ item.attributes }}>{{ link(item.title, item.url) }}</li>
+            {% endif %}
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endmacro %}
+
+    </div>
+  </div>
+</div>
