@@ -178,6 +178,7 @@ img.align-left {
     /*NAVBAR (divisória)*/
     .nav>li {
       border-right: 1px solid white;
+     
     }
     .nav>li:last-child{
       border-right: 0;
