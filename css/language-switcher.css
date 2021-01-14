@@ -1,15 +1,19 @@
-div.language-switcher-language-url ul{
-    float:left;
+/*SELETOR DE IDIOMA*/
+.language-switcher-language-url ul{
+    list-style: none;
     padding-inline-start: 0px;
     margin-block-end: auto;
-  }
-
-div.language-switcher-language-url ul.links li {
-    display: inline;
-    padding-right: 6px;
+}
+  /*linha 2 global*/
+.language-switcher-language-url ul li {
+      display: inline;
+      padding-right: 6px;
 }
 
-.language-icon {
-    height: 14px;
-    width: 18px;
+/*BUSCA*/
+  /*tamanho do campo */
+.region-header-right .search-block-form .form-item .form-search {
+    width: 100%;
+    box-sizing: border-box;
+    height: 40px;
 }

@@ -2,19 +2,18 @@ global-styles-and-scripts:
   version: VERSION
   css:
     theme:
-      includes/bootstrap.min.css: {}
-      includes/font-awesome.min.css: {}
-      css/tabs.css: {}
-      includes/aegan.css: {}
+      vendor/bootstrap.min.css: {}
+      vendor/font-awesome.min.css: {}
+      css/aegan.css: {}
       css/global.css: {}
+      css/tabs.css: {}
       css/slideshow.css: {}
       css/menu.css: {}
-      css/language-switcher: {}
+      css/language-switcher.css: {}
   js:
-    includes/bootstrap.min.js: {}
-    includes/font-awesome.min.js: {}
-    includes/jquery.smooth-scroll.js: {} 
-    js/global.js: {}
+    vendor/bootstrap.min.js: {}
+    vendor/font-awesome.min.js: {}
+    js/aegan-jquery.smooth-scroll.js: {} 
     js/menu.js: {}
 
   dependencies:
