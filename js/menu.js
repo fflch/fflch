@@ -1,3 +1,20 @@
+jQuery(document).ready(function(){
+    if(jQuery(window).scrollTop() < 767) { 
+      jQuery(".dropdown-menu > li > svg, .main-navigation-dropdown svg").bind("click", toggleSubmenu);
+    }
+});
+jQuery(window).resize(function(){
+    if(jQuery(window).scrollTop() < 767) { 
+      jQuery(".dropdown-menu > li > svg, .main-navigation-dropdown svg").unbind("click", toggleSubmenu);
+      jQuery(".dropdown-menu > li > svg, .main-navigation-dropdown svg").bind("click", toggleSubmenu);
+    }
+});
+  
+function toggleSubmenu(){//hablita o click nos submenus do main-navigation
+    var li = jQuery(this).parent();
+    jQuery(li).find('.dropdown-menu').toggleClass('toggle');
+}
+
 $.fn.dropdown = (function() {
     var $bsDropdown = $.fn.dropdown;
     return function(config) {
@@ -24,3 +41,5 @@ $(function() {
         e.stopPropagation();
     });
 });
+
+

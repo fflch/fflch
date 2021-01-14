@@ -93,25 +93,21 @@ h1 a:hover, h1 a:active, h2 a:hover, h2 a:active, h3 a:hover, h3 a:active, h4 a:
   color: #ab7811;
 }
 
-/* aumenta tamanho da caixa de busca ***/
-.region-header-right .search-block-form .form-item .form-search {
-    width: 200px;
-    height: 35px;
-}
+
 
 /*ícone de lupa no formulário de busca no cabeçalho do site*/
 .search-block-form .form-submit {
   width: 25px;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 1px;
+  top: 1px;
   border: none;
-  height: 100%;
+  height: 94%;
   background-image: url('../images/search.png');
   background-size: 20px;
   background-position: center;
   font-size: 0;
-  border-radius: 0px;
+  border-radius: 0px 2px 2px 0;
 }
 
 /* altera cor da fonte do titulo dos blocos */
@@ -172,9 +168,26 @@ img.align-left {
 
 /*------------TEMA CABEÇALHO FFLCH -------------------*/
 
-
+/*SELETOR DE IDIOMA*/
+.language-switcher-language-url ul{
+  list-style: none;
+  padding-inline-start: 0px;
+  margin-block-end: auto;
+}
+/*linha 2 global*/
+.language-switcher-language-url ul li {
+    display: inline;
+    padding-right: 6px;
+}
+/*BUSCA*/
+/*tamanho do campo */
+.region-header-right .search-block-form .form-item .form-search {
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+}
 /*--------------------------768px+------------------------*/
-@media only screen and (min-width:768px){
+@media (min-width:768px){
     /*NAVBAR (divisória)*/
     .nav>li {
       border-right: 1px solid white;
@@ -292,30 +305,12 @@ img.align-left {
       margin-bottom: -6px;
     }
     
-    /*SELETOR DE IDIOMA*/
-    #block-seletordeidioma ul{
-      float:left;
-      padding-inline-start: 0px;
-      margin-block-end: auto;
-    }
-    /*linha 2 global*/
-    div.language-switcher-language-url ul.links li {
-        display: inline;
-        padding-right: 6px;
-    }
-    
     /*tamanho icone*/
     .language-icon {
         height: 14px;
         width: 18px;
     }
-    /*BUSCA*/
-    /*tamanho do campo - linha 99 de global*/
-    .region-header-right .search-block-form .form-item .form-search {
-        width: 100%;
-        height: 30px;
-
-    }
+   
   }
   
   /*--------------------------(-)767px------------------------*/
@@ -423,18 +418,6 @@ img.align-left {
     line-height: 1em;
     }    
   
-  
-  /*SELETOR DE IDIOMA*/
-  #block-seletordeidioma ul{
-    padding-inline-start: 0px;
-    margin-block-end: auto;
-  }
-  /*linha 2 global*/
-  div.language-switcher-language-url ul.links li {
-      display: inline;
-      padding-right: 6px;
-  }
-  
   /*tamanho icone*/
   .language-icon {
       height: 14px;
@@ -446,12 +429,7 @@ img.align-left {
   .fflch-header-right > .region-header-right {
     width: 100%;
   }
-  /*tamanho do campo - linha 99 de global*/
-  .region-header-right .search-block-form .form-item .form-search {
-      width: 100%;
-      height: 30px;
-      
-  }
+ 
   }
   /*BUSCA (ambos)*/
   .search-block-form .form-submit {

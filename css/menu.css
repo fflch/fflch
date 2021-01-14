@@ -64,13 +64,10 @@
   z-index: 500;
 }
 .navbar-nav>li>a {
-  padding-bottom: 0px;
-  padding-top: 0px;
   text-transform: uppercase;
-}
-.navbar-nav>li>a {
   color: #fff;
 }
+
 /* Dropdown menu */
 .navbar-nav .dropdown-menu {
   border-radius: 0px;
@@ -112,7 +109,7 @@
   color: #fff;
 }
 
-/*
+
 .dropdown-submenu {
     position: relative;
 }
@@ -138,7 +135,7 @@
 
 .dropdown-submenu:hover > a:after {
     border-left-color: #fff;
-}*/
+}
 
 .dropdown-submenu.pull-left {
     float: none;
