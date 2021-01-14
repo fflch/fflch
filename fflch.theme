@@ -19,14 +19,6 @@ function fflch_preprocess_page(&$vars) {
   $vars['site_name'] = $config->get('name');
   $vars['site_slogan'] = $config->get('slogan');
 
-  // copied from aegan
-  $color = theme_get_setting('fflch_color', 'fflch');
-
-  $vars['#attached']['library'][] = "aegan/color-{$color}";
-  $vars['#attached']['drupalSettings']['aegan']['flexslider']['animation'] = theme_get_setting('slideshow_animation', 'fflch');
-  $vars['#attached']['drupalSettings']['aegan']['flexslider']['slide_speed'] = theme_get_setting('slideshow_slide_speed', 'fflch');
-  $vars['#attached']['drupalSettings']['aegan']['flexslider']['animation_speed'] = theme_get_setting('slideshow_animation_speed', 'fflch');
-
   // Add information about the number of sidebars.
   if (!empty($vars['page']['sidebar_first']) && !empty($vars['page']['sidebar_second'])) {
     $vars['contentlayout'] = 'col-md-6 col-sm-6';
@@ -41,7 +33,6 @@ function fflch_preprocess_page(&$vars) {
   }
 
   // Essa condição não está funcionando, quando há 3 colunas de blocos
-  //https://github.com/fflch/aegan-subtheme/issues/9
   elseif (!empty($vars['page']['sidebar_first']) && !empty($vars['page']['sidebar_second_second']) && !empty($vars['page']['sidebar_second'])) {
     $vars['contentlayout'] = 'col-md-6 col-sm-6';
     $vars['sidebarfirst'] = 'col-md-2 col-sm-2';
@@ -107,12 +98,6 @@ function fflch_preprocess_page(&$vars) {
 }
 
 function fflch_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
-
-  $form['aegan_settings'] = array(
-    '#type' => 'details',
-    '#title' => t('Aegan default (desativado)'),
-    '#open' => FALSE,
-  );
 
   $form['fflch_settings'] = array(
     '#type' => 'details',
