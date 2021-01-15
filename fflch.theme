@@ -10,7 +10,7 @@ use Drupal\Core\Path\AliasManager;
 use Drupal\file\Entity\File;
 
 
-define('THEME_PATH_fflch', base_path() . drupal_get_path('theme', 'fflch'));
+define('THEME_PATH_FFLCH', base_path() . drupal_get_path('theme', 'fflch'));
 
 function fflch_preprocess_page(&$vars) {
 
@@ -84,7 +84,7 @@ function fflch_preprocess_page(&$vars) {
         $image_path = file_create_url($uri);
       }
       else {
-        $image_path = THEME_PATH_fflch . "/images/slide-{$i}.jpg";
+        $image_path = THEME_PATH_FFLCH . "/images/slide-{$i}.jpg";
       }
       $vars['slider'][] = array(
         'name' => !empty($fid) ? $file->getFilename() : "slider-{$i}",
@@ -101,6 +101,12 @@ function fflch_form_system_theme_settings_alter(&$form, FormStateInterface $form
 
   $form['fflch_settings'] = array(
     '#type' => 'details',
+    '#title' => t('Configurações'),
+    '#open' => FALSE,
+  );
+
+  $form['fflch_settings'] = array(
+    '#type' => 'details',
     '#title' => t('Configurações Slideshow'),
     '#open' => TRUE,
   );
@@ -111,7 +117,6 @@ function fflch_form_system_theme_settings_alter(&$form, FormStateInterface $form
     '#default_value' => theme_get_setting('slideshow_display', 'fflch'),
     '#description'   => t("Check this option to show Slideshow in front page. Uncheck to hide."),
   );
-
 
   $form['fflch_settings']['slideshow']['slideshow_count'] = array(
     '#type' => 'select',
