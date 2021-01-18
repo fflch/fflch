@@ -3,7 +3,6 @@ global-styles-and-scripts:
   css:
     theme:
       includes/bootstrap.min.css: {}
-      includes/font-awesome.min.css: {}
       css/aegan.css: {}
       css/global.css: {}
       css/tabs.css: {}
@@ -12,7 +11,6 @@ global-styles-and-scripts:
       css/language-switcher.css: {}
   js:
     includes/bootstrap.min.js: {}
-    includes/font-awesome.min.js: {}
     js/aegan-jquery.smooth-scroll.js: {} 
     js/menu.js: {}
 

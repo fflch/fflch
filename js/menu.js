@@ -1,3 +1,5 @@
+var $ = jQuery;
+
 jQuery(document).ready(function(){
     if(jQuery(window).scrollTop() < 767) { 
       jQuery(".dropdown-menu > li > svg, .main-navigation-dropdown svg").bind("click", toggleSubmenu);
