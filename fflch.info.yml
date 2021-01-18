@@ -2,7 +2,7 @@ name: FFLCH
 type: theme
 description: 'FFLCH'
 package: FFLCH
-core: 8.x
+core_version_requirement: ^8 || ^9
 base theme: classy
 
 libraries:
