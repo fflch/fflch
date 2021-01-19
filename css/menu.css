@@ -132,6 +132,7 @@
   /* Dropdown menu */
   .navbar-nav .dropdown-menu {
     width: max-content !important;
+    min-width: 100%;
   }
 }
 
