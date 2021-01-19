@@ -73,7 +73,6 @@
   border-radius: 0px;
   border: none;
   padding: 0px;
-  width: max-content !important;
 }
 .dropdown-menu li{
   border-bottom: 1px dotted #003954;
@@ -130,6 +129,10 @@
   .dropdown:hover > .dropdown-menu {
     display: block;
  }
+  /* Dropdown menu */
+  .navbar-nav .dropdown-menu {
+    width: max-content !important;
+  }
 }
 
 
