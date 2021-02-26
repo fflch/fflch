@@ -1,5 +1,5 @@
 /* menu principal azul ***/
-.nav .open>a, .nav .open>a:hover, .nav .open>a:focus, .nav>li.active>a, .nav>li.active>a:hover, .nav>li.active>a:focus, .nav>li>a.is-active, .nav>li>a:hover, .nav>li>a:focus {
+.navbar-nav .open>a, .navbar-nav .open>a:hover, .navbar-nav .open>a:focus, .navbar-nav>li.active>a, .navbar-nav>li.active>a:hover, .navbar-nav>li.active>a:focus, .navbar-nav>li>a.is-active, .navbar-nav>li>a:hover, .navbar-nav>li>a:focus {
     background-color: #273e74;
     color: #fff;
 }
