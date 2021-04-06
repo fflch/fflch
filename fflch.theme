@@ -67,7 +67,8 @@ function fflch_preprocess_page(&$vars) {
 
   $show_slideshow = theme_get_setting('slideshow_display', 'fflch');
   $current_path = \Drupal::service('path.current')->getPath();
-  $path_alias = mb_strtolower(\Drupal::service('path.alias_manager')->getAliasByPath($current_path));
+  #$path_alias = mb_strtolower(\Drupal::service('path.alias_manager')->getAliasByPath($current_path));
+  $path_alias = mb_strtolower(\Drupal::service('path_alias.manager')->getAliasByPath($current_path));
   if (theme_get_setting('slideshow_visiblity', 'fflch')) {
     $visiblity = \Drupal::service('path.matcher')->matchPath($path_alias, theme_get_setting('slideshow_visiblity', 'fflch'));
   }
