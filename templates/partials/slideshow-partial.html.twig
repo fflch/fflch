@@ -14,7 +14,7 @@
     {% set i = 1 %}
     {% for slide in slider %}
            <div class="carousel-item {% if i == 1 %} active {% endif %}">
-            <a href="{{ slide.url | t }}" target="_blank">
+            <a href="{{ slide.url | t }}">
               <img class="d-block w-100" src="{{ slide.src }}" alt="{{ slide.name }}">
               {% if slide.description %}
                 <div class="carousel-caption d-none d-md-block">
