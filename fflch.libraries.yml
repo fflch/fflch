@@ -9,6 +9,7 @@ global-styles-and-scripts:
       css/slideshow.css: {}
       css/menu.css: {}
       css/language-switcher.css: {}
+      css/custom-ffleste.css: {}
   js:
     includes/bootstrap.min.js: {}
     js/aegan-jquery.smooth-scroll.js: {} 

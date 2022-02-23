@@ -1,0 +1,255 @@
+
+.custom-region-sidebar-first a {
+    color: #727272;
+    font-size: 0.9rem;
+}
+.custom-region-sidebar-first .menu-item {
+    border: 1px solid rgba(0,0,0,0.125);
+    overflow: hidden;
+    padding: 5px;
+    margin-bottom: 3px;
+    border-radius: 3px;
+}
+.custom-region-sidebar-first ul.menu a.is-active {
+    color: #fff;
+    font-weight: 400;
+}
+.custom-region-sidebar-first .menu-item--active-trail, .custom-region-sidebar-first  .menu-item--active-trail a {
+    background-color: #273e74;
+    padding: 0.2em;
+    color: #fff;
+    border-radius: 3px;
+}
+.custom_header {
+    float: left;
+    display: inline-flex;
+}
+.custom_menu_primary .nav.navbar-nav .main-navigation-dropdown {
+    padding-right: 24px;
+    display: flex;
+}
+.custom_menu_primary .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+.field--name-field-docente-foto {
+    float: left;
+    margin: 10px;
+}
+.views_block__frontpage_front_listagem_superior_1 figure {
+    margin: 0 0 -0.5rem;
+}
+.views_block__frontpage_front_listagem_superior_1 .card-img-top {
+    min-height: 255px;
+}
+.custom_menu_primary .navbar-nav>li>a {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 12px;
+}
+.custom_menu_primary .nav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+}
+.custom-eventos-sidebar  .headline {
+    border-radius: 4px;
+}
+.custom-eventos-sidebar .block-title {
+    text-align: left;
+    font-size: x-large;
+}
+.custom-eventos-sidebar .sidebar  {
+    border-radius: 4px;
+}
+.custom-eventos-sidebar .block-content {
+    padding:0;
+    padding: 0;
+}
+.custom-eventos-sidebar .table td, .table th {
+    padding: 0.5rem;
+    vertical-align: top;
+    border-top: 0;
+}
+.custom-eventos-sidebar  table {
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+    min-height: 320px;
+    max-height: 320px;
+}
+.custom-eventos-sidebar tr:nth-child(even) {
+    background: #fff; 
+}
+.custom_content_titulo h1:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 6px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: #4ad2ac;
+    margin-left: 10px;
+}
+.card .btn-link  {
+    background-color: #273e74;
+    color: #fff;
+}
+.custom_content_titulo h1 {
+    padding-left: 25px;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+.custom_footer_social {
+    margin-right: 90%;
+    width: 10%;
+}
+.custom_menu_footer {
+    font-size: 0.8rem;
+}
+.custom_footer_titulo .block-title, #block-socialiconslist-5 .block-title  {
+    color: #31333c;
+    font-size: 0.8rem;
+    font-weight: normal;
+    border-bottom: none;
+}
+.custom-cards-blocks p {
+    color: #31333c;
+}
+.views_block__frontpage_front_listagem_superior_1 p {
+    color: #31333c;
+}
+.custom-cards-blocks .card-title-destaque {
+    color: #4ad2ac;
+    font-size: xx-large;
+}
+.custom-card-date  {
+    background-color: #4ad2ac;
+    color: #fff;
+    padding-left: 6px;
+    border-radius: 3px;
+}
+.custom_footer_titulo p {
+    font-size: 0.7rem;
+}
+.custom_footer_horizontal {
+    padding-top: 45px;
+}
+.custom_footer_horizontal p {
+    color: #fff;
+    font-weight: normal;
+    font-size: 14px;
+}
+.card-subtitle {
+    color: #4ad2ac;
+    size: 13px;
+    font-weight: 900;
+}
+.card-title {
+    font-weight: bold;
+}
+.custom_footer_titulo #block-socialiconslist-5 {
+    width: 50%;
+}
+.social-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 40%;
+}
+.social-list li {
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+.social-list a {
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+.social-list span {
+    position: absolute;
+    left: -9999px;
+}
+.social-list .facebook {
+    background-color: #2853d5;
+    background-image: url(../images/icon-social-facebook-white.png);
+}
+.social-list .twitter {
+    background-color: #00aced;
+    background-image: url(../images/icon-social-twitter-white.png);
+}
+.social-list .instagram {
+    background-color: #ec2f94;
+    background-image: url(../images/icon-social-instagram-white.png);
+}
+.social-list .linkedin {
+    background-color: #0a66c2;
+    background-image: url(../images/icon-social-linkedin-white.png);
+}
+.language-switcher-language-url {
+    display: inline-flex;
+    float: left;
+    margin-left: 110px;
+    margin-top: -6px;
+}
+#block-footerinstitucional-3-menu {
+    font-size: 0.8rem;
+    color: #31333c;
+    background-color: #FFFF;
+    text-align: left;
+    display: block;
+    margin: 6px 0 25px 0;
+    border-bottom: 1px dotted;
+}
+#block-footercontato-3-menu {
+    font-size: 0.8rem;
+    color: #31333c;
+    background-color: #FFFF;
+    text-align: left;
+    display: block;
+    margin: 30px 0 25px 0;
+    border-bottom: none;
+}
+.fflch-slogan {
+    display: none;
+}
+.fflch-site-name {
+    text-align: center;
+}
+.ds-2col-stacked > .group-left {
+    float: left;
+    width: 30%;
+}
+.ds-2col-stacked > .group-left img {
+ border-radius: 5px;
+}    
+.ds-2col-stacked > .group-right {
+    float: right;
+    width: 70%;
+}
+.ds-2col-stacked > .group-right .field--name-field-aluno-email {
+    font-size: larger;
+}
+.ds-2col-stacked > .group-footer {
+    padding-top: 15px;   
+}
+.custom-node-docentes img {
+    border-radius: 6px;
+    margin-right: 10px;
+    background-color: #fff;
+}
+.ds-2col-stacked > .group-footer  .field__label {
+    font-weight: 800;
+    font-size: large;
+}
