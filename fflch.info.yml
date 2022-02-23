@@ -26,3 +26,10 @@ regions:
   footer_third: Footer Third
   footer_fourth: Footer Fourth
   footer: Footer
+  # New Regions custom
+  content_middle: Content Middle 
+  highlight: Highlight
+  menu_fancy: Menu Fancy
+  breadcrumb_fancy: Breadcrumb Fancy
+  footer_top_fancy: Footer Top Fancy
+  footer_bottom_fancy: Footer Bottom Fancy
