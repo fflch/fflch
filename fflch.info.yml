@@ -26,3 +26,7 @@ regions:
   footer_third: Footer Third
   footer_fourth: Footer Fourth
   footer: Footer
+  # Regiões usadas no site do DCP
+  content_middle: Content Middle 
+  highlight: Highlight
+  footer_bottom_fancy: Footer Bottom Fancy
