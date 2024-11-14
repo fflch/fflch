@@ -10,7 +10,7 @@ use Drupal\Core\Path\AliasManager;
 use Drupal\file\Entity\File;
 
 
-define('THEME_PATH_FFLCH', base_path() . drupal_get_path('theme', 'fflch'));
+define('THEME_PATH_FFLCH', base_path() . \Drupal::service('extension.path.resolver')->getPath('theme', 'fflch'));
 
 function fflch_preprocess_page(&$vars) {
 
@@ -188,7 +188,7 @@ function fflch_form_system_theme_settings_alter(&$form, FormStateInterface $form
   }
 
 
-  $filename = drupal_get_path('theme', 'fflch') . '/fflch.theme';
+  $filename = \Drupal::service('extension.path.resolver')->getPath('theme', 'fflch') . '/fflch.theme';
   $form_state->addBuildInfo('files', array($filename));
 
   $form['#submit'][] = 'fflch_settings_form_submit';
